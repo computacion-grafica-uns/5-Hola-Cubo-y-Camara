@@ -81,9 +81,6 @@ let translation = 0
 let scale = 1
 let rotation = 0
 
-// Definimos una velocidad de rotación (en grados por segundo)
-const rotationSpeed = 20
-
 // #️⃣ Establecemos el programa a usar, sus conexiónes atributo-buffer e indices a usar (guardado en el VAO)
 
 gl.useProgram(program)
@@ -94,17 +91,7 @@ magic(gl, program, canvas)
 
 // #️⃣ Dibujamos la escena
 
-let previousTime = 0
-
 function render(currentTime) {
-  // Calculamos el incremento en rotación a partir del tiempo desde el ultimo frame y la velocidad de rotación
-  const timeDelta = (currentTime - previousTime) / 1000
-  const rotationDelta = timeDelta * rotationSpeed
-
-  // El nuevo angulo es el anterior + el incremento calculado (acotado al rango [0, 360])
-  rotation += rotationDelta
-  rotation %= 360
-
   // Actualizamos matrices de traslación, escalado y rotación (en este caso solo va a ir cambiando la de rotación)
   mat4.fromTranslation(translationMatrix, [translation, 0, 0])
   mat4.fromScaling(scaleMatrix, [scale, scale, 1])
@@ -124,7 +111,6 @@ function render(currentTime) {
   gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0)
 
   // Guardamos el momento en que se dibujo este frame y solicitamos el proximo
-  previousTime = currentTime
   requestAnimationFrame(render)
 }
 
