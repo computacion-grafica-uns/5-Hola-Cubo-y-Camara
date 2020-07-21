@@ -57,8 +57,8 @@ const indices = [
 
 // #️⃣ Guardamos la info de la geometría en VBOs e IBO
 
-const vertexPositionsBuffer = createVertexBuffer(gl, vertexPositions)
-const vertexColorsBuffer = createVertexBuffer(gl, vertexColors)
+const vertexPositionBuffer = createVertexBuffer(gl, vertexPositions)
+const vertexColorBuffer = createVertexBuffer(gl, vertexColors)
 const indexBuffer = createIndexBuffer(gl, indices)
 
 // #️⃣ Asociamos los atributos del programa a los buffers creados, y establecemos el buffer de indices a usar
@@ -66,9 +66,9 @@ const indexBuffer = createIndexBuffer(gl, indices)
 const vertexArray = gl.createVertexArray()
 gl.bindVertexArray(vertexArray)
 gl.enableVertexAttribArray(vertexPositionLocation)
-bindAttributeToVertexBuffer(gl, vertexPositionLocation, 3, vertexPositionsBuffer)
+bindAttributeToVertexBuffer(gl, vertexPositionLocation, 3, vertexPositionBuffer)
 gl.enableVertexAttribArray(vertexColorLocation)
-bindAttributeToVertexBuffer(gl, vertexColorLocation, 3, vertexColorsBuffer)
+bindAttributeToVertexBuffer(gl, vertexColorLocation, 3, vertexColorBuffer)
 gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer)
 gl.bindVertexArray(null)
 
