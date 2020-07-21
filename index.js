@@ -1,6 +1,6 @@
-import { getCanvasElement, getWebGL2Context, createShader, createProgram, createVertexBuffer, bindAttributeToVertexBuffer, createIndexBuffer, magic } from "./utils/gl-utils.js"
-import { vertexShaderSourceCode, fragmentShaderSourceCode } from "./utils/shaders.js"
-import { mat4, glMatrix } from './utils/gl-matrix/index.js'
+import { getCanvasElement, getWebGL2Context, createShader, createProgram, createVertexBuffer, bindAttributeToVertexBuffer, createIndexBuffer, magic } from "./scripts/gl-utils.js"
+import { vertexShaderSourceCode, fragmentShaderSourceCode } from "./scripts/shaders.js"
+import { mat4, glMatrix } from './scripts/gl-matrix/index.js'
 
 // #️⃣ Configuración base de WebGL
 
