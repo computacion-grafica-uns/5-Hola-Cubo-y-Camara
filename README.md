@@ -1,7 +1,7 @@
 # Hola Cubo y Cámara
 
 <p align="center">
-  <img src="docs/master.png" height="400"/>
+  <img src="docs/master.png"/>
 </p>
 
 ### Referencias 📚
